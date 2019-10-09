@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
         if ($_GET['confirm'] == 'yes') {
             $stmt = $pdo->prepare('DELETE FROM books WHERE id = ?');
             $stmt->execute([$_GET['id']]);
-            $msg = 'Book removed!';
+            $msg = 'Book removed! <br /> <a href="read.php">Back</a>';
         } else {
             header('Location: read.php');
             exit;
